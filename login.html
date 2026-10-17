@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login | Titusjane High School</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #edf4fc;
+    }
+
+    .login-page {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 430px;
+      background: white;
+      padding: 36px;
+      border-radius: 14px;
+      box-shadow: 0 12px 40px #073b8218;
+    }
+
+    .school-mark {
+      width: 75px;
+      height: 75px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #0753ad;
+      color: white;
+      font-size: 23px;
+      font-weight: 900;
+      border: 5px solid #d5e7ff;
+    }
+
+    .login-card h1 {
+      text-align: center;
+      color: #073b82;
+      font-size: 25px;
+    }
+
+    .login-subtitle {
+      text-align: center;
+      color: #68778d;
+      margin: 8px 0 25px;
+    }
+
+    .login-form {
+      display: grid;
+      gap: 17px;
+    }
+
+    .login-form label {
+      display: block;
+      margin-bottom: 7px;
+      color: #25334a;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #cbd7e7;
+      border-radius: 5px;
+      font: inherit;
+    }
+
+    .login-form input:focus {
+      outline: 2px solid #8cbcff;
+      border-color: #0753ad;
+    }
+
+    .login-button {
+      padding: 12px;
+      border: 6px solid #0753ad;
+      border-radius: 6px;
+      background: #0753ad;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-button:hover {
+      background: white;
+      color: #0753ad;
+    }
+
+    .login-message {
+      text-align: center;
+      color: #b42318;
+      overflow-wrap: anywhere;
+    }
+
+    .login-links {
+      margin-top: 20px;
+      text-align: center;
+      display: grid;
+      gap: 12px;
+    }
+
+    .login-links a {
+      color: #0753ad;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .demo-note {
+      margin-top: 18px;
+      padding: 12px;
+      background: #f1f6fc;
+      border-radius: 6px;
+      color: #52627a;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main class="login-page">
+    <section class="login-card">
+      <div class="school-mark" aria-hidden="true">THS</div>
+
+      <h1>Student Login</h1>
+      <p class="login-subtitle">Titusjane High School</p>
+
+      <form id="loginForm" class="login-form">
+        <div>
+          <label for="username">Username</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            autocomplete="username"
+            placeholder="Enter your username"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Enter your password"
+            required
+          >
+        </div>
+
+        <button class="login-button" type="submit">LOGIN</button>
+        <p id="loginMessage" class="login-message" aria-live="polite"></p>
+        <p id="loginStatus" role="status" aria-live="polite"></p>
+
+      </form>
+
+
+      <div class="login-links">
+        <a href="register.html">New student? Register here</a>
+        <a href="index.html">← Back to Homepage</a>
+      </div>
+
+      <p class="demo-note">
+        Demo interface only. A secure school account system must be connected
+        before this page can authenticate real students.
+      </p>
+    </section>
+  </main>
+
+  <script src="login.js"></script>
+</body>
+</html>

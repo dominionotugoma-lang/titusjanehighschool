@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Titusjane High School</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background: #f1f5fb;
+    }
+
+    .admin-header {
+      background: #073b82;
+      color: white;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .admin-header h1 {
+      font-size: 23px;
+    }
+
+    .admin-header p {
+      font-size: 13px;
+      opacity: .85;
+    }
+
+    .admin-header button {
+      padding: 11px 17px;
+      background: white;
+      color: #073b82;
+      border: 2px solid white;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .admin-container {
+      width: min(1150px, 92%);
+      margin: 35px auto;
+    }
+
+    .admin-welcome {
+      margin-bottom: 25px;
+    }
+
+    .admin-welcome h2 {
+      color: #073b82;
+      font-size: 30px;
+    }
+
+    .admin-welcome p {
+      color: #68778d;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 23px;
+      border-radius: 10px;
+      border: 1px solid #e0e9f5;
+      box-shadow: 0 5px 18px #163b660a;
+    }
+
+    .stat-card p {
+      color: #68778d;
+    }
+
+    .stat-card h3 {
+      font-size: 30px;
+      color: #0753ad;
+    }
+
+    .admin-panel {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      border: 1px solid #e0e9f5;
+    }
+
+    .admin-panel h2 {
+      color: #073b82;
+      margin-bottom: 18px;
+    }
+
+    .admin-actions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .admin-actions a {
+      display: block;
+      background: #0753ad;
+      color: white;
+      padding: 16px;
+      border-radius: 6px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .admin-actions a:hover {
+      background: #032f6b;
+    }
+
+    .admin-notice {
+      background: #fff4d6;
+      color: #754b00;
+      padding: 14px;
+      border-radius: 6px;
+      margin-bottom: 25px;
+    }
+
+    .admin-footer {
+      text-align: center;
+      padding: 25px;
+      color: #68778d;
+    }
+
+    @media (max-width: 700px) {
+      .stats-grid,
+      .admin-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="admin-header">
+    <div>
+      <h1>Titusjane High School</h1>
+      <p>Administration Portal</p>
+    </div>
+    <button id="adminLogout">Back to Homepage</button>
+  </header>
+
+  <main class="admin-container">
+
+    <section class="admin-welcome">
+      <h2>Admin Dashboard</h2>
+      <p>Manage school information and access administration tools.</p>
+    </section>
+
+    <div class="admin-notice">
+      <strong>Demo mode:</strong> This dashboard is not protected by real
+      administrator authentication. Do not use it for real student records
+      until a secure backend is connected.
+    </div>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <p>Registered Students</p>
+        <h3 id="studentCount">0</h3>
+      </article>
+
+      <article class="stat-card">
+        <p>Results Records</p>
+        <h3>0</h3>
+      </article>
+
+      <article class="stat-card">
+        <p>School Announcements</p>
+        <h3 id="announcementCount">0</h3>
+      </article>
+    </section>
+
+    <section class="admin-panel">
+      <h2>Student Management</h2>
+      <div class="admin-actions">
+        <a href="register.html">Student Registration</a>
+        <a href="login.html">Student Login Page</a>
+        <a href="results.html">View Sample Results</a>
+      </div>
+    </section>
+
+    <section class="admin-panel">
+      <h2>School Management</h2>
+      <div class="admin-actions">
+        <a href="timetable.html">Class Timetable</a>
+        <a href="index.html#gallery">School Gallery</a>
+        <a href="index.html#contact">Contact Page</a>
+      </div>
+    </section>
+
+    <a href="students.html" class="admin-button">
+     Manage Student Records
+    </a>
+
+<a href="results.html" class="admin-button">
+  Manage Student Results
+</a>
+
+<a href="announcements.html" class="admin-button">
+  Manage Announcements
+</a>
+
+    <section class="admin-panel">
+      <h2>Administration Information</h2>
+      <p>Use this dashboard as a starting point for the school's administration
+        interface. Real student records, result entry, and announcements
+        require server-side storage and administrator permissions.</p>
+    </section>
+
+  </main>
+
+  <footer class="admin-footer">
+    <p>© <span id="adminYear"></span> Titusjane High School</p>
+    <p>Either the best or nothing.</p>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>

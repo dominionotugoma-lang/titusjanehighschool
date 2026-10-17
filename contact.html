@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Titusjane High School</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f7ff;
+      color: #172b4d;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #073b83;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .school-name {
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    .motto {
+      font-size: 12px;
+      color: #d9e8ff;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #8fc5ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 65px 20px;
+      color: white;
+      background: linear-gradient(135deg, #073b83, #1684d8);
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .contact-card,
+    .form-card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px #0b367015;
+    }
+
+    h2 {
+      color: #073b83;
+      margin-bottom: 18px;
+    }
+
+    .contact-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #e0e9f5;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #073b83;
+      margin-bottom: 5px;
+    }
+
+    .contact-item a {
+      color: #1265b5;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 14px 0 6px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #bdcfe5;
+      border-radius: 7px;
+      font: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #1265b5;
+      box-shadow: 0 0 0 3px #1265b51a;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 13px 23px;
+      border: 2px solid #073b83;
+      border-radius: 7px;
+      background: #073b83;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      background: white;
+      color: #073b83;
+    }
+
+    .map-placeholder {
+      margin-top: 28px;
+      background: #dceaff;
+      border: 2px dashed #8bb4e8;
+      border-radius: 12px;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .map-placeholder p {
+      margin-top: 8px;
+    }
+
+    .back-home {
+      text-align: center;
+      margin: 35px 0;
+    }
+
+    footer {
+      background: #062957;
+      color: white;
+      text-align: center;
+      padding: 22px 15px;
+      margin-top: 45px;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <div class="school-name">TITUSJANE HIGH SCHOOL</div>
+      <div class="motto">Either the best or nothing</div>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="register.html">Admissions</a>
+      <a href="announcements.html">News</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Contact Us</h1>
+    <p>
+      We welcome questions from students, parents, guardians,
+      and visitors. Contact Titusjane High School using the
+      information below or send us a message.
+    </p>
+  </section>
+
+  <main class="container">
+    <div class="contact-layout">
+
+      <section class="contact-card">
+        <h2>School Information</h2>
+
+        <div class="contact-item">
+          <strong>School Adress</strong>
+          <p>number 7 micheal ayorinde, street agbelekale abulegba</p>
+        </div>
+
+        <div class="contact-item">
+          <strong>Phone Number</strong>
+          <p>+2347072702787</p>
+        </div>
+
+        <div class="contact-item">
+          <strong>Email Address</strong>
+          <p>titusjane19@gmail.com</p>
+        </div>
+
+        <div class="contact-item">
+          <strong>Office Hours</strong>
+          <p>24/7</p>
+        </div>
+
+        <div class="contact-item">
+          <strong>Our Motto</strong>
+          <p>Either the best or nothing</p>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <h2>Send Us a Message</h2>
+        <p>Fill in the form to prepare a message for the school.</p>
+
+        <form id="contactForm">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required
+          >
+
+          <label for="email">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+          >
+
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="What is your message about?"
+            required
+          >
+
+          <label for="message">Your Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message here..."
+            required
+          ></textarea>
+
+          <button type="submit" class="btn">Prepare Email</button>
+          <p id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+    </div>
+
+    <section class="map-placeholder">
+      <h2>Find Our School</h2>
+      <p>
+        The school map can be added here when you have the
+        school's correct address or Google Maps location.
+      </p>
+    </section>
+
+    <div class="back-home">
+      <a href="index.html" class="btn">Back to Homepage</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Titusjane High School.</p>
+    <p>Either the best or nothing</p>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+</html>

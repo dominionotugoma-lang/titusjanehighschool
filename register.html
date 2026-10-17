@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration | Titusjane High School</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #edf4fc;
+    }
+
+    .register-page {
+      min-height: 100vh;
+      padding: 45px 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .register-card {
+      width: 100%;
+      max-width: 650px;
+      padding: 35px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 12px 40px #073b8218;
+    }
+
+    .register-card h1 {
+      color: #073b82;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .register-card .subtitle {
+      text-align: center;
+      color: #68778d;
+      margin-bottom: 25px;
+    }
+
+    .register-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full,
+    .register-submit,
+    .register-message {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-weight: bold;
+      color: #25334a;
+      font-size: 14px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd7e7;
+      border-radius: 5px;
+      font: inherit;
+      background: white;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      outline: 2px solid #8cbcff;
+      border-color: #0753ad;
+    }
+
+    .register-submit {
+      padding: 13px;
+      border: 6px solid #0753ad;
+      border-radius: 7px;
+      background: #0753ad;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .register-submit:hover {
+      background: white;
+      color: #0753ad;
+    }
+
+    .register-message {
+      text-align: center;
+      overflow-wrap: anywhere;
+      color: #0753ad;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #0753ad;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 520px) {
+      .register-card {
+        padding: 22px 17px;
+      }
+
+      .register-form {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full,
+      .register-submit,
+      .register-message {
+        grid-column: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="register-page">
+    <section class="register-card">
+      <h1>Titusjane High School</h1>
+      <p class="subtitle">Student Registration Form</p>
+
+      <form id="registerForm" class="register-form">
+
+        <div class="field">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" name="fullName" type="text"
+                 placeholder="Enter your full name" required>
+        </div>
+
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text"
+                 placeholder="Choose a username" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email"
+                 placeholder="Enter your email" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel"
+                 placeholder="Enter phone number" required>
+        </div>
+
+        <div class="field">
+          <label for="className">Class</label>
+          <select id="className" name="className" required>
+            <option value="">Select your class</option>
+            <option>JSS 1</option>
+            <option>JSS 2</option>
+            <option>JSS 3</option>
+            <option>SS 1</option>
+            <option>SS 2</option>
+            <option>SS 3</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="password">Create Password</label>
+          <input id="password" name="password" type="password"
+                 minlength="8" autocomplete="new-password"
+                 placeholder="At least 8 characters" required>
+        </div>
+
+        <div class="field full">
+          <label for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" name="confirmPassword"
+                 type="password" minlength="8"
+                 autocomplete="new-password"
+                 placeholder="Enter your password again" required>
+        </div>
+
+        <button class="register-submit" type="submit">
+          REGISTER NOW
+        </button>
+
+        <p id="registerMessage" class="register-message"
+           aria-live="polite"></p> 
+        <p id="loginStatus" role="status" aria-live="polite"></p>
+
+      </form>
+
+
+      <a class="back-home" href="index.html">
+        ← Back to Homepage
+      </a>
+    </section>
+  </main>
+
+  <script src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Announcements | Titusjane High School</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f5fc;
+      color: #193252;
+    }
+
+    header {
+      background: #073b83;
+      color: white;
+      padding: 28px 6%;
+    }
+
+    header h1 { margin: 0 0 8px; }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    main {
+      max-width: 1050px;
+      margin: 32px auto;
+      padding: 0 18px;
+    }
+
+    .notice {
+      padding: 15px;
+      background: #fff0c2;
+      color: #674d00;
+      border-radius: 8px;
+      line-height: 1.5;
+      margin-bottom: 22px;
+    }
+
+    .panel {
+      background: white;
+      padding: 24px;
+      margin-bottom: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px #00000010;
+    }
+
+    .announcement-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .announcement {
+      padding: 20px;
+      border: 1px solid #dce6f4;
+      border-left: 5px solid #0758bd;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .announcement h3 {
+      margin-top: 0;
+      color: #073b83;
+    }
+
+    .announcement-meta {
+      color: #5c6d82;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .category {
+      display: inline-block;
+      background: #e5efff;
+      color: #073b83;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #b8c9df;
+      border-radius: 6px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .full-width { grid-column: 1 / -1; }
+
+    button, .link-button {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #0758bd;
+      color: white;
+      border: 0;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button:hover, .link-button:hover {
+      background: #043775;
+    }
+
+    .delete-button {
+      background: #c62828;
+      margin-top: 12px;
+    }
+
+    .delete-button:hover { background: #8e1717; }
+
+    #message {
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    footer {
+      background: #062d63;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 35px;
+    }
+
+    @media (max-width: 650px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .full-width { grid-column: auto; }
+      .panel { padding: 17px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>TITUSJANE HIGH SCHOOL</h1>
+    <p>School News and Announcements</p>
+    <p>Either the best or nothing</p>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="admin.html">Admin Dashboard</a>
+      <a href="students.html">Student Records</a>
+      <a href="manage-results.html">Manage Results</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="notice">
+      <strong>Demonstration mode:</strong> Announcements are stored in this
+      browser only. This page has no administrator authentication.
+      Do not use it to publish confidential school information.
+    </div>
+
+    <section class="panel">
+      <h2>Latest Announcements</h2>
+      <p>Read school news, upcoming events, and important notices.</p>
+
+      <div id="announcementList" class="announcement-list"></div>
+      <p id="emptyMessage"></p>
+    </section>
+
+    <section class="panel">
+      <h2>Publish an Announcement</h2>
+      <p>Use this form to add a demonstration announcement.</p>
+
+      <form id="announcementForm">
+        <div class="form-grid">
+          <div>
+            <label for="announcementTitle">Announcement Title</label>
+            <input id="announcementTitle" maxlength="120"
+                   placeholder="e.g. Examination timetable" required>
+          </div>
+
+          <div>
+            <label for="announcementCategory">Category</label>
+            <select id="announcementCategory" required>
+              <option value="">Select category</option>
+              <option>General News</option>
+              <option>Examinations</option>
+              <option>Admissions</option>
+              <option>Events</option>
+              <option>Holidays</option>
+              <option>Important Notice</option>
+            </select>
+          </div>
+
+          <div class="full-width">
+            <label for="announcementBody">Announcement Details</label>
+            <textarea id="announcementBody" maxlength="3000"
+                      placeholder="Write your announcement here..."
+                      required></textarea>
+          </div>
+        </div>
+
+        <p style="margin-top:18px">
+          <button type="submit">Publish Demo Announcement</button>
+        </p>
+      </form>
+
+      <p id="message" role="status"></p>
+    </section>
+
+    <p>
+      <a class="link-button" href="index.html">Back to Homepage</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Titusjane High School</p>
+    <p>Either the best or nothing</p>
+  </footer>
+
+  <script src="announcements.js"></script>
+</body>
+</html>

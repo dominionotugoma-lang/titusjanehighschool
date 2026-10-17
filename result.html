@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Student Results | Titusjane High School</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f5fc;
+      color: #183153;
+    }
+
+    header {
+      background: #073b83;
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+    }
+
+    main {
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      margin-bottom: 22px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px #00000012;
+    }
+
+    .demo-notice {
+      background: #fff0c2;
+      color: #674d00;
+      border-radius: 8px;
+      padding: 15px;
+      line-height: 1.5;
+    }
+
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #b8c9df;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    button, .link-button {
+      display: inline-block;
+      padding: 12px 17px;
+      background: #0758bd;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover, .link-button:hover {
+      background: #043775;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .result-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .summary-box {
+      background: #eaf2ff;
+      border-left: 4px solid #0758bd;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    .summary-box strong {
+      display: block;
+      font-size: 22px;
+      margin-top: 8px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    th, td {
+      padding: 13px;
+      border-bottom: 1px solid #dce5f0;
+      text-align: left;
+    }
+
+    th {
+      background: #073b83;
+      color: white;
+    }
+
+    #message {
+      line-height: 1.5;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .search-grid, .result-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 17px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+
+      header {
+        background: white;
+        color: black;
+        border-bottom: 2px solid black;
+      }
+
+      .no-print, .demo-notice {
+        display: none !important;
+      }
+
+      main {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .card {
+        box-shadow: none;
+        padding: 10px;
+      }
+
+      th {
+        background: #ddd !important;
+        color: black !important;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>TITUSJANE HIGH SCHOOL</h1>
+    <p>Student Academic Results</p>
+    <p><em>Either the best or nothing</em></p>
+  </header>
+
+  <main>
+    <section class="card demo-notice">
+      <strong>Demonstration website:</strong>
+      This page reads records stored in the same browser. It is not a
+      secure student portal, and it does not verify a student's identity.
+      Do not enter or print real confidential student results.
+    </section>
+
+    <section class="card no-print">
+      <h2>Check Results</h2>
+      <p>Search the demonstration records entered on the results management page.</p>
+
+      <form id="searchForm">
+        <div class="search-grid">
+          <div>
+            <label for="studentName">Student Name</label>
+            <input id="studentName" required
+                   placeholder="Enter the student's full name">
+          </div>
+
+          <div>
+            <label for="studentClass">Class</label>
+            <select id="studentClass" required>
+              <option value="">Select class</option>
+              <option>JSS 1</option>
+              <option>JSS 2</option>
+              <option>JSS 3</option>
+              <option>SS 1</option>
+              <option>SS 2</option>
+              <option>SS 3</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="term">Academic Term</label>
+            <select id="term" required>
+              <option value="">Select term</option>
+              <option>First Term</option>
+              <option>Second Term</option>
+              <option>Third Term</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="session">Academic Session</label>
+            <input id="session" required
+                   placeholder="e.g. 2026/2027">
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button type="submit">Check Results</button>
+          <button type="reset" style="background:#64748b">
+            Clear Search
+          </button>
+        </div>
+      </form>
+
+      <p id="message" role="status"></p>
+    </section>
+
+    <section id="resultCard" class="card hidden">
+      <h2>Student Report Card</h2>
+      <p><strong>School:</strong> Titusjane High School</p>
+      <p><strong>Motto:</strong> Either the best or nothing</p>
+
+      <div id="studentDetails"></div>
+
+      <div class="result-summary">
+        <div class="summary-box">
+          Total Score
+          <strong id="totalScore">0/500</strong>
+        </div>
+
+        <div class="summary-box">
+          Average
+          <strong id="averageScore">0%</strong>
+        </div>
+
+        <div class="summary-box">
+          Overall Grade
+          <strong id="overallGrade">-</strong>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Score</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody id="subjectTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="button-row no-print">
+        <button type="button" id="printButton">Print Results</button>
+        <button type="button" id="newSearchButton"
+                style="background:#64748b">
+          Search Again
+        </button>
+      </div>
+    </section>
+    
+<section id="databaseResults">
+  <h2>My Examination Results</h2>
+  <p id="resultsStatus" role="status" aria-live="polite">
+    Loading your results...
+  </p>
+  <div id="resultsContainer"></div>
+</section>
+
+
+    <section class="card no-print">
+      <div class="button-row">
+        <a class="link-button" href="login.html">Student Login</a>
+        <a class="link-button" href="index.html">Home</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="results.js"></script>
+  
+<section class="result-entry">
+  <h2>Publish Student Result</h2>
+
+  <form id="databaseResultForm">
+    <label for="resultUsername">Student Username</label>
+    <input id="resultUsername" name="username" required>
+
+    <label for="resultSubject">Subject</label>
+    <input id="resultSubject" name="subject" required>
+
+    <label for="resultTerm">Term</label>
+    <select id="resultTerm" name="term" required>
+      <option value="">Choose term</option>
+      <option>First Term</option>
+      <option>Second Term</option>
+      <option>Third Term</option>
+    </select>
+
+    <label for="resultSession">Academic Session</label>
+    <input
+      id="resultSession"
+      name="session"
+      placeholder="2026/2027"
+      required
+    >
+
+    <label for="resultScore">Score (0–100)</label>
+    <input
+      id="resultScore"
+      name="score"
+      type="number"
+      min="0"
+      max="100"
+      step="0.5"
+      required
+    >
+
+    <button type="submit">Save Result</button>
+    <p id="databaseResultStatus" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+</body>
+</html>
