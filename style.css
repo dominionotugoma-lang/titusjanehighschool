@@ -1,0 +1,592 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #19304d;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  min-height: 85px;
+  background: #073b83;
+  color: white;
+  padding: 14px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+}
+
+.school-logo {
+  width: 52px;
+  height: 52px;
+  border: 3px solid white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.brand h2 {
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.brand p {
+  font-size: 12px;
+  color: #d7e7ff;
+}
+
+#mainNav {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+#mainNav a {
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+#mainNav a:hover {
+  color: #9fcaff;
+}
+
+#mainNav .nav-register {
+  background: white;
+  color: #073b83;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+#mainNav .nav-register:hover {
+  background: #dceaff;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid #ffffff70;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 580px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: white;
+  background: #073b83;
+}
+
+.slides,
+.slide,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 24, 59, 0.88),
+    rgba(3, 38, 86, 0.57),
+    rgba(2, 24, 59, 0.18)
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 850px;
+  padding: 80px 8%;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 5vw, 60px);
+  line-height: 1.12;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  max-width: 620px;
+  font-size: 17px;
+  color: #eef5ff;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  font-weight: bold;
+  transition: 0.25s;
+}
+
+.btn-primary {
+  background: #ffffff;
+  color: #073b83;
+}
+
+.btn-primary:hover {
+  background: #cfe3ff;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border-color: white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #073b83;
+}
+
+.slide-arrow {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 43px;
+  height: 43px;
+  border: 1px solid #ffffff90;
+  border-radius: 50%;
+  background: #052c5d8c;
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.slide-arrow:hover {
+  background: #ffffff;
+  color: #073b83;
+}
+
+.slide-arrow.prev {
+  left: 20px;
+}
+
+.slide-arrow.next {
+  right: 20px;
+}
+
+.slide-dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff80;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.section {
+  padding: 75px 7%;
+}
+
+.section-heading {
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto 38px;
+}
+
+.section-heading h2 {
+  color: #073b83;
+  font-size: clamp(26px, 3vw, 36px);
+  margin-bottom: 12px;
+}
+
+.section-heading > p:last-child {
+  color: #66758a;
+}
+
+.blue-text {
+  color: #1476c9;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.feature-card {
+  padding: 28px 23px;
+  border: 1px solid #e1eaf5;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 7px 25px #0b36700b;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px #0b367019;
+}
+
+.feature-icon {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 {
+  color: #073b83;
+  margin-bottom: 9px;
+}
+
+.feature-card p {
+  color: #68788c;
+  margin-bottom: 12px;
+}
+
+.text-link {
+  color: #1265b5;
+  font-weight: bold;
+}
+
+.academics {
+  background: #f2f7ff;
+}
+
+.admission-banner {
+  padding: 48px 8%;
+  background: linear-gradient(120deg, #073b83, #1379c9);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.admission-banner h2 {
+  font-size: clamp(24px, 3vw, 35px);
+  margin-bottom: 10px;
+}
+
+.admission-banner p {
+  color: #e0edff;
+}
+
+.btn-light {
+  background: white;
+  color: #073b83;
+  white-space: nowrap;
+}
+
+.btn-light:hover {
+  background: #dceaff;
+  transform: translateY(-2px);
+}
+
+.quick-link-grid {
+  max-width: 1050px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.quick-link-grid a {
+  padding: 17px 20px;
+  border: 1px solid #dce7f5;
+  border-radius: 8px;
+  color: #073b83;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  transition: 0.2s;
+}
+
+.quick-link-grid a:hover {
+  background: #073b83;
+  color: white;
+  border-color: #073b83;
+}
+
+.footer {
+  background: #062957;
+  color: white;
+  text-align: center;
+  padding: 28px 15px;
+}
+
+.footer p {
+  font-size: 13px;
+  color: #d4e4fa;
+  margin-top: 5px;
+}
+
+@media (max-width: 1050px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #mainNav {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 15px 0;
+  }
+
+  #mainNav.open {
+    display: flex;
+  }
+
+  #mainNav a {
+    padding: 8px;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .brand h2 {
+    font-size: 15px;
+  }
+
+  .hero {
+    min-height: 570px;
+  }
+
+  .hero-content {
+    padding: 65px 8%;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .slide-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .slide-arrow.prev {
+    left: 8px;
+  }
+
+  .slide-arrow.next {
+    right: 8px;
+  }
+
+  .feature-grid,
+  .quick-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 55px 6%;
+  }
+
+  .admission-banner {
+    padding: 38px 7%;
+  }
+}
+
+.school-footer {
+  background: #062957;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  margin-top: 40px;
+}
+
+.school-footer h3 {
+  margin-bottom: 6px;
+}
+
+.school-footer p {
+  color: #d4e4fa;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.school-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.school-footer nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.school-footer nav a:hover {
+  color: #91c5ff;
+}
+
+/* Fix homepage header and navigation */
+.site-header {
+  width: 100%;
+  min-height: 85px;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  background: #ffffff;
+  position: relative;
+  z-index: 1000;
+}
+
+.school-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #0b2f6b;
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.school-brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  display: inline-block;
+  color: #17365d;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.main-nav a:hover {
+  color: #087bdb;
+}
+
+.apply-btn {
+  display: inline-block;
+  background: #075bc5;
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    justify-content: center;
+  }
+
+  .main-nav {
+    width: 100%;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .school-brand {
+    font-size: 17px;
+  }
+
+  .main-nav {
+    gap: 12px;
+  }
+
+  .main-nav a {
+    font-size: 13px;
+  }
+}
